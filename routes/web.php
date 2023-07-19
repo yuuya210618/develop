@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TasksController; // 追加するのを忘れない
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,3 +17,5 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/', [TasksController::class, 'index'])->name('tasks.index');
