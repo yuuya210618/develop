@@ -12,4 +12,10 @@ class TasksController extends Controller
         $tasks = Task::get();
         return view('tasks.index');
     }
+
+    public function show($id)
+    {
+        return view('tasks.show');
+    }
+    
 }
