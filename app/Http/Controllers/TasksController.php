@@ -35,4 +35,9 @@ class TasksController extends Controller
         return redirect()->route('tasks.index');
     }
     
+    public function edit($id)
+    {
+        $task = Task::find($id);
+        return view('tasks.edit', compact('task'));;
+    }
 }
