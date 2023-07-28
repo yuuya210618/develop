@@ -40,4 +40,28 @@ class TasksController extends Controller
         $task = Task::find($id);
         return view('tasks.edit', compact('task'));;
     }
+
+    public function update(TaskRequest $request, $id)
+    {
+        // idを条件にtasksテーブルからレコードを取得
+        $task = Task::find($id);
+        // 更新処理
+        $task->fill([
+            'name' => $request->name,
+            'content' => $request->content,
+        ])
+        ->save();
+
+        // タスク一覧画面にリダイレクト
+        return redirect()->route('tasks.index');
+    }
+
+    public function delete($id)
+    {
+        // idを条件にtasksテーブルから該当レコードを削除
+        $task = Task::destroy($id);
+
+        // タスク一覧画面にリダイレクト
+        return redirect()->route('tasks.index');
+    }
 }

@@ -26,10 +26,16 @@
         padding: 10px 0 10px 6px;
         text-align: center;        
     }
-    td {
+    .td1 {
         border-top: 1px solid #aaa;
         padding: 10px 0 10px 6px;
         text-align: center; 
+    }
+    .td2 {
+        border-top: 1px solid #aaa;
+        padding: 10px 0 10px 6px;
+        display: flex;
+        justify-content: center;
     }
     a {
         margin-right: 20px;

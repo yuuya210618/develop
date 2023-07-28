@@ -34,7 +34,7 @@
       <p class="error__message">{{$error}}</p>
     @endforeach
 </div>
-<form action="" method="POST" class="form">
+<form action="{{ route('tasks.update', ['id' => $task->id]) }}" method="POST" class="form">
 @csrf
     <div class="form-group">
         <label for="name">タスク<span>(必須)</span></label><br>
